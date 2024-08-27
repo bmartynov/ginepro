@@ -4,7 +4,7 @@ use crate::{LookupService, ServiceDefinition};
 use anyhow::Context;
 use std::collections::HashSet;
 use std::net::SocketAddr;
-use trust_dns_resolver::{system_conf, AsyncResolver, TokioAsyncResolver};
+use hickory_resolver::{system_conf, AsyncResolver, TokioAsyncResolver};
 
 /// Implements [`LookupService`] by using DNS queries to lookup [`ServiceDefinition::hostname`].
 pub struct DnsResolver {
